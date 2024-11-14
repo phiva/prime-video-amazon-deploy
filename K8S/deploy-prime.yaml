@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: deploy-prime
+  name: deploy-prime
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deploy-prime
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: deploy-prime
+    spec:
+      containers:
+      - image: phiva1985/deploy-prime:latest
+        name: prime
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
